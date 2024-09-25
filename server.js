@@ -21,20 +21,20 @@ app.post('/convert', (req, res) => {
   }
 
   const inputFile = path.join(tempDir, 'input.tex');
-  const outputFile = path.join(tempDir, 'output.pdf');
+  const outputFile = path.join(tempDir, 'output.docx');
 
   fs.writeFileSync(inputFile, latex);
 
-  exec(`pdflatex ${inputFile}`, (error, stdout, stderr) => {
+  exec(`pandoc ${inputFile} -o ${outputFile}`, (error, stdout, stderr) => {
     if (error) {
       console.error(`Error: ${error.message}`);
-      return res.status(500).send('Error converting LaTeX to PDF');
+      return res.status(500).send('Error converting LaTeX to DOCX');
     }
     if (stderr) {
       console.error(`stderr: ${stderr}`);
     }
 
-    res.download(outputFile, 'converted_document.pdf', (err) => {
+    res.download(outputFile, 'converted_document.docx', (err) => {
       if (err) {
         console.error(`Error sending file: ${err}`);
       }
