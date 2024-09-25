@@ -12,6 +12,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.0",
-    "pandoc": "^0.2.0"
+    "pandoc": "^0.2.0",
+    "pdflatex": "^0.0.1"
   }
 }

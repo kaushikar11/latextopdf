@@ -25,7 +25,7 @@ app.post('/convert', (req, res) => {
 
   fs.writeFileSync(inputFile, latex);
 
-  exec(`pandoc ${inputFile} -o ${outputFile}`, (error, stdout, stderr) => {
+  exec(`pdflatex ${inputFile}`, (error, stdout, stderr) => {
     if (error) {
       console.error(`Error: ${error.message}`);
       return res.status(500).send('Error converting LaTeX to PDF');
