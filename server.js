@@ -17,12 +17,13 @@ app.post('/convert', (req, res) => {
 
   const tempDir = path.join(__dirname, 'temp');
   if (!fs.existsSync(tempDir)) {
-    fs.mkdirSync(tempDir);
+    fs.mkdirSync(tempDir, { recursive: true });
   }
 
   const inputFile = path.join(tempDir, 'input.tex');
   const outputFile = path.join(tempDir, 'input.pdf'); // Output will be input.pdf
 
+  
   fs.writeFileSync(inputFile, latex);
 
   // Use pdflatex instead of pandoc for better conversion results
