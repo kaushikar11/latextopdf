@@ -19,7 +19,6 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
-RUN mkdir -p /app/temp && chmod -R 777 /app/temp
 # Expose the desired port
 EXPOSE 4000
 
