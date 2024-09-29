@@ -16,33 +16,53 @@ app.post('/convert', (req, res) => {
   }
 
   const tempDir = path.join(__dirname, 'temp');
+
+  // Create temp directory if it doesn't exist
   if (!fs.existsSync(tempDir)) {
     fs.mkdirSync(tempDir, { recursive: true });
   }
 
   const inputFile = path.join(tempDir, 'input.tex');
-  const outputFile = path.join(tempDir, 'input.pdf'); // Output will be input.pdf
+  const outputFile = path.join(tempDir, 'input.pdf');
 
-  
+  // Write LaTeX content to the input file
   fs.writeFileSync(inputFile, latex);
 
-  // Use pdflatex instead of pandoc for better conversion results
+  // Convert LaTeX to PDF using pdflatex
   exec(`pdflatex -output-directory=${tempDir} ${inputFile}`, (error, stdout, stderr) => {
     if (error) {
-      console.error(`Error: ${error.message}`);
+      console.error(`Error during LaTeX to PDF conversion: ${error.message}`);
+      console.error(`stderr: ${stderr}`);
       return res.status(500).send('Error converting LaTeX to PDF');
     }
+
     if (stderr) {
-      console.error(`stderr: ${stderr}`);
+      console.error(`pdflatex stderr: ${stderr}`);
     }
 
+    // Verify if the PDF file has been created
+    if (!fs.existsSync(outputFile)) {
+      console.error('PDF file not found after conversion');
+      return res.status(500).send('PDF generation failed');
+    }
+
+    // Send the PDF file to the client
     res.download(outputFile, 'converted_document.pdf', (err) => {
       if (err) {
-        console.error(`Error sending file: ${err}`);
+        console.error(`Error sending file: ${err.message}`);
       }
-      // Clean up temporary files
-      fs.unlinkSync(inputFile);
-      fs.unlinkSync(outputFile);
+
+      // Clean up temporary files asynchronously
+      fs.unlink(inputFile, (unlinkErr) => {
+        if (unlinkErr) {
+          console.error(`Failed to delete input file: ${unlinkErr.message}`);
+        }
+      });
+      fs.unlink(outputFile, (unlinkErr) => {
+        if (unlinkErr) {
+          console.error(`Failed to delete output file: ${unlinkErr.message}`);
+        }
+      });
     });
   });
 });
