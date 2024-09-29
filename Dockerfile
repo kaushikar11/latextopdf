@@ -23,4 +23,4 @@ COPY . .
 EXPOSE 4000
 
 # Run the application
-CMD ["node", "server.js"]
+CMD ["npm", "start"]
