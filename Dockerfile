@@ -10,8 +10,13 @@ RUN apt-get update && \
 # Create and set the working directory
 WORKDIR /app
 
-# Copy the package.json and package-lock.json files
+# Copy only the package.json and package-lock.json to leverage Docker caching
 COPY package*.json ./
+
+# Set npm to retry and increase timeout
+RUN npm config set fetch-retries 5 && \
+    npm config set fetch-retry-mintimeout 20000 && \
+    npm config set fetch-retry-maxtimeout 120000
 
 # Install the application dependencies
 RUN npm install

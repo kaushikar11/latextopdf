@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.8.26)  30 SEP 2024 21:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.8.26)  30 SEP 2024 15:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**C:/Users/Kaushik/Documents/OTHER_PROJECTS/latex-to-pdf/temp/input.tex
-(C:/Users/Kaushik/Documents/OTHER_PROJECTS/latex-to-pdf/temp/input.tex
+**./temp/input.tex
+(temp/input.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
 (C:\Users\Kaushik\AppData\Local\Programs\1\MiKTeX\tex/latex/base\article.cls
@@ -136,21 +136,41 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 Type X to quit or <RETURN> to proceed,
 or enter new name. (Default extension: sty)
 
-Enter file name: 
-! Emergency stop.
-<read *> 
-         
+Enter file name: input
+
+! LaTeX Error: File `input.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: input.pdf
+
+! LaTeX Error: File `input.pdf' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: pdf)
+
+Enter file name: ^^D
+! Missing endcsname inserted.
+<to be read again> 
+                   MessageBreak 
 l.13 \usepackage
-                {ifthen}^^M
+                {ifthen}
+? 
+! Emergency stop.
+<to be read again> 
+                   MessageBreak 
+l.13 \usepackage
+                {ifthen}
 End of file on the terminal!
 
  
 Here is how much of TeX's memory you used:
- 2147 strings out of 474486
- 33507 string characters out of 5741873
+ 2150 strings out of 474486
+ 33339 string characters out of 5741873
  1924542 words of memory out of 5000000
- 24457 multiletter control sequences out of 15000+600000
+ 24461 multiletter control sequences out of 15000+600000
  558069 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,0n,65p,264b,36s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,0n,65p,211b,36s stack positions out of 10000i,1000n,20000p,200000b,200000s
 !  ==> Fatal error occurred, no output PDF file produced!

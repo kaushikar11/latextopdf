@@ -1,0 +1,104 @@
+
+\documentclass[a4paper]{article}
+\usepackage[margin=1cm]{geometry}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{graphicx}
+\usepackage{catchfile}
+
+% Add these packages for URL image support
+\usepackage{catchfile}
+\usepackage{currfile}
+\usepackage{ifthen}
+
+
+\newcommand{\sectiontitle}[1]{\textbf{\large #1}}
+\newcommand{\fieldname}[1]{\textbf{#1:}}
+\newcommand{\fieldvalue}[1]{\texttt{#1}}
+
+\begin{document}
+
+\begin{center}
+    \texttt{\Large\textbf{Student Details}}
+    
+    \vspace{0.5cm}
+    % Assuming the file is saved locally as 'student_photo.jpg'
+    \includegraphics[width=0.3\textwidth]{temp/student-passport-photo.jpg}
+    
+    \vspace{0.5cm}
+    \texttt{\large\textbf{Kaushik A R}}
+\end{center}
+
+\vspace{1cm}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+    \sectiontitle{Personal Information}
+    \begin{tabular}{@{} >{\raggedright\arraybackslash}p{0.4\linewidth} p{0.6\linewidth} @{}}
+        \rowcolor[gray]{0.9} \multicolumn{2}{l}{\textbf{Basic Details}} \\
+        \fieldname{Name} & \fieldvalue{Kaushik A R} \\
+        \fieldname{Roll Number} & \fieldvalue{sd} \\
+        \fieldname{Class, Branch, Section} & \fieldvalue{d2} \\
+        \fieldname{Year of Study} & \fieldvalue{9} \\
+        \rowcolor[gray]{0.9} \multicolumn{2}{l}{\textbf{Father's Details}} \\
+        \fieldname{Name} & \fieldvalue{kl} \\
+        \fieldname{Occupation} & \fieldvalue{q} \\
+        \fieldname{Mobile} & \fieldvalue{1} \\
+        \rowcolor[gray]{0.9} \multicolumn{2}{l}{\textbf{Mother's Details}} \\
+        \fieldname{Name} & \fieldvalue{d} \\
+        \fieldname{Occupation} & \fieldvalue{sd} \\
+        \fieldname{Mobile} & \fieldvalue{3} \\
+    \end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \sectiontitle{Contact Information}
+    \begin{tabular}{@{} >{\raggedright\arraybackslash}p{0.4\linewidth} p{0.6\linewidth} @{}}
+        \rowcolor[gray]{0.9} \multicolumn{2}{l}{\textbf{Residential Address}} \\
+        \fieldname{Address Line 1} & \fieldvalue{456-6, 4TH STREET} \\
+        \fieldname{Line 2} & \fieldvalue{PORIYALAR NAGAR, THIRUPPALAI} \\
+        \fieldname{Line 3} & \fieldvalue{kdjbvf} \\
+        \fieldname{City} & \fieldvalue{Madurai} \\
+        \fieldname{State} & \fieldvalue{Tamilnadu} \\
+        \fieldname{Pincode} & \fieldvalue{625014} \\
+        \rowcolor[gray]{0.9} \multicolumn{2}{l}{\textbf{Student Contact}} \\
+        \fieldname{Email} & \fieldvalue{ritebiter11@gmail.com} \\
+        \fieldname{Mobile} & \fieldvalue{09487736258} \\
+    \end{tabular}
+\end{minipage}
+
+\vspace{1cm}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+    \sectiontitle{Additional Information}
+    \begin{tabular}{@{} >{\raggedright\arraybackslash}p{0.4\linewidth} p{0.6\linewidth} @{}}
+        \rowcolor[gray]{0.9} \multicolumn{2}{l}{\textbf{Siblings}} \\
+        \fieldname{Siblings} & \fieldvalue{4} \\
+        \rowcolor[gray]{0.9} \multicolumn{2}{l}{\textbf{Health Information}} \\
+        \fieldname{Blood Group} & \fieldvalue{poooo[} \\
+        \fieldname{Allergies} & \fieldvalue{cs} \\
+        \fieldname{Health Problems} & \fieldvalue{sdkj} \\
+    \end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \sectiontitle{Local Guardian Information}
+    \begin{tabular}{@{} >{\raggedright\arraybackslash}p{0.4\linewidth} p{0.6\linewidth} @{}}
+        \rowcolor[gray]{0.9} \multicolumn{2}{l}{\textbf{Guardian Details}} \\
+        \fieldname{Name} & \fieldvalue{ds} \\
+        \fieldname{Mobile} & \fieldvalue{7888} \\
+        \fieldname{Relationship} & \fieldvalue{undefined} \\
+        \rowcolor[gray]{0.9} \multicolumn{2}{l}{\textbf{Guardian Address}} \\
+        \fieldname{Line 1} & \fieldvalue{2} \\
+        \fieldname{Line 2} & \fieldvalue{3} \\
+        \fieldname{Line 3} & \fieldvalue{ds} \\
+        \fieldname{City} & \fieldvalue{sdw} \\
+        \fieldname{State} & \fieldvalue{sd} \\
+        \fieldname{Pincode} & \fieldvalue{3} \\
+    \end{tabular}
+\end{minipage}
+
+\end{document}
+    
