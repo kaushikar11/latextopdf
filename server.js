@@ -104,7 +104,7 @@ const app = express();
 const port = process.env.PORT || 4000;
 
 // Middleware
-app.use(cors({ origin: ["http://localhost:3000"] }));
+app.use(cors({ origin: true }));
 
 // Setup multer for file uploads (imageBlob)
 const upload = multer({ storage: multer.memoryStorage() });
